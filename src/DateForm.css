@@ -1,0 +1,130 @@
+.date-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  padding: 1em;
+  background: #223e;
+  box-sizing: border-box;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: transform .6s ease-in;
+}
+.date-form.show {
+  transition-timing-function: ease-out;
+  transform: none;
+}
+.date-form h3 {
+  text-align: center;
+  border-bottom: 1px solid #fffa;
+  padding-bottom: .5em;
+}
+.date-form input[type="submit"] {
+  background: none;
+  border: none;
+  width: 100%;
+  margin-top: 1em;
+  background: #fff2;
+  border: 1px solid transparent;
+}
+.date-form input[type="submit"]:hover,
+.date-form input[type="submit"]:active {
+  background: #22f9;
+}
+.date-form input[type="submit"]:disabled {
+  background: transparent;
+  color: #fff6;
+  border: 1px dotted;
+}
+.date-form input[type="submit"]:focus {
+  outline: none;
+}
+.date-selector.month {
+  width: 100%;
+}
+.date-selector.day {
+  width: 100%;
+}
+.date-selector {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.date-selector-option {
+  position: relative;
+}
+.date-selector-option, 
+.date-form input[type='submit'] {
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-size: 1em;
+  padding: 0;
+}
+.month .date-selector-option {
+  width: 25%;
+}
+.day .date-selector-option {
+  width: 25%;
+}
+@media only screen and (min-width: 600px) {
+  .date-form { 
+    grid-template-columns: auto 50% 12%;
+    grid-column-gap: 1em;
+    grid-template-rows: auto auto auto;
+  }
+  .date-form h2 {
+    grid-column: span 2;
+  }
+  .date-form .date-selector {
+    grid-row: 3;
+  }
+  .date-form input[type="submit"] {
+    grid-row: 1;
+    grid-column: 3;
+    margin-top: 0;
+    place-self: center center;
+  }
+  .date-selector-option,
+  .date-form input[type='submit'] {
+    height: 3em;
+    line-height: 3em;
+  }
+  .month .date-selector-option {
+    width: 33.3333333%;
+  }
+  .day .date-selector-option {
+    width: 12.5%;
+  }
+  .date-form h3.day,
+  .date-selector.day {
+    grid-column: span 2;
+  }
+}
+.date-selector-option input {
+  opacity: 0;
+}
+.date-selector-option label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid transparent;
+}
+.date-selector-option label:hover {
+  background: #fff2;
+}
+.date-selector-option input:checked+label { 
+  border-color: #fff9; 
+  background: #22f9;
+}
+.date-form input[type="submit"]:focus,
+.date-selector-option input:focus+label { 
+  color: #f77;
+  box-shadow: 0 0 0px 2px #f77;
+  border-color: transparent;
+}

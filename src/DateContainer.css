@@ -1,0 +1,87 @@
+.date-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.date-header {
+  padding: 1em;
+  background: transparent;
+}
+.date-header .start-over {
+  float: right;
+}
+.carousel-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  z-index: -1;
+}
+.carousel img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -5;
+  object-fit: contain;
+  display: block;
+  opacity: 0;
+  transition: 0.25s opacity;
+}
+.carousel img.active.loaded {
+  opacity: 1;
+}
+.carousel-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+.date-container button {
+  color: white;
+  border: none;
+  background: transparent;
+  user-select: none;
+  outline: none;
+  font-size: 1em;
+  padding: .5em;
+  margin: 0.83em 0;
+}
+.carousel-nav button,
+.carousel-nav .loading-indicator {
+  font-size: 2em;
+  display: block;
+  margin: 0;
+  padding: .25em;
+}
+
+.date-container button:focus {
+  box-shadow: 0 0 0px 2px #f77;
+}
+.date-container button:hover {
+  background: #fff2;
+}
+.date-container button:active {
+  background: #22f9;
+}
+
+.carousel-nav .loading-indicator {
+  font-size: 1em;
+  line-height: 3em;
+}
+.carousel-nav .emoji { 
+  display: block;
+}
+.carousel-nav .next .emoji {
+  transform: rotateZ(-20deg);
+}
+.carousel-nav .last .emoji {
+  transform: rotateZ(20deg);
+}
