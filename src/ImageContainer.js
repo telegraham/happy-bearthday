@@ -17,6 +17,8 @@ const ImageContainer = ({ availableImage }) => {
     if (availableImage && !availableImage.notFound) {
       setLoading(true);
       NasaAdapter.fetchImagesForDate(setLoadingAndPics, availableImage.dateString);
+    } else if (availableImage.notFound) {
+      setPics([])
     }
   }
 

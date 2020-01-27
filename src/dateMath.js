@@ -14,7 +14,7 @@ const findLastBirthday = (dateObject) => {
     return null
   }
   const now = new Date();
-  return findLastBirthdayAsOf(dateObject.month, dateObject.day, now.getFullYear(), now.getMonth() + 1, now.getDate())
+  return findLastBirthdayAsOf(parseInt(dateObject.month), parseInt(dateObject.day), now.getFullYear(), now.getMonth() + 1, now.getDate())
 }
 
 const nasaifyDate = ({ day, month, year }) => {
