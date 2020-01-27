@@ -162,7 +162,7 @@ describe('findAvailableImagery', () => {
 
     expect(findAvailableImagery(lastBirthday, response)).toStrictEqual({
       dateString: "2019-06-08",
-      date: { year: 2019, month: 6, day: 5 },
+      date: { year: 2019, month: 6, day: 8 },
       exact: false
     })
 
@@ -181,7 +181,7 @@ describe('findAvailableImagery', () => {
 
     expect(findAvailableImagery(lastBirthday, response)).toStrictEqual({
       dateString: "2019-06-02",
-      date: { year: 2019, month: 5, day: 29 },
+      date: { year: 2019, month: 6, day: 2 },
       exact: false
     })
 
@@ -200,7 +200,7 @@ describe('findAvailableImagery', () => {
 
     expect(findAvailableImagery(lastBirthday, response)).toStrictEqual({
       dateString: "2020-01-02",
-      date: { year: 2019, month: 12, day: 29 },
+      date: { year: 2020, month: 1, day: 2 },
       exact: false
     })
   });
