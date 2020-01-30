@@ -25,7 +25,7 @@ const DateContainer = ({ date, availableImages, setFormShowing }) => {
         return null
   }, [lastBirthday, availableImages])
 
-  useEffect(() => setFormShowing(false), [date.month, date.day])
+  useEffect(() => setFormShowing(false), [setFormShowing, date.month, date.day])
 
   return (
     <main className="date-container"> 
