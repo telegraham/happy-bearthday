@@ -33,7 +33,7 @@
   transition: 0.25s opacity;
 }
 .carousel img.active {
-  opacity: 0.5;
+  opacity: 0.25;
 }
 .carousel img.active.loaded {
   opacity: 1;

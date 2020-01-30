@@ -3,13 +3,13 @@ const API_KEY = "TgqhL3hIhNodtr2agaWlmX3bUbt7rLsuIPzTPZ6j"
 
 const pathifyDateString = nasaDate => nasaDate.replace(/-/g, "/")
 
-const processImages = (images, style, nasaDate) => {
+const processImages = (images, style, nasaDate, format='jpg', quality='jpg') => {
   if (!images.length)
     return images // probably an error
   const dateString = pathifyDateString(nasaDate);
   return images.map(image => ({
     description: image.caption,
-    url: `https://epic.gsfc.nasa.gov/archive/${ style }/${ dateString }/png/${ image.image }.png?API_KEY=${ API_KEY }`
+    url: `https://epic.gsfc.nasa.gov/archive/${ style }/${ dateString }/${ quality }/${ image.image }.${ format }?API_KEY=${ API_KEY }`
   }))
 }
 

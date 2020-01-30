@@ -27,7 +27,9 @@ const Carousel = ({ images, loading }) => {
     </li>)
   }
 
-  const nowLoading = loading || (images.length && !loadedImages[images[activeIndex].url])
+  const activeImage = images[activeIndex]
+  const loadingImage = images.length && activeImage && !loadedImages[activeImage.url]
+  const nowLoading = loading || loadingImage
 
   return <div className="carousel">
     <ul className="carousel-images">
